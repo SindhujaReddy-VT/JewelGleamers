@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Bookstore</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="The homepage for My Bookstore" />
+
+    <!-- Import font-awesome icons -->
+    <link
+      href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    
+
+    <!-- order of CSS files is important (this is the "Cascade" part of CSS) -->
+
+    <!-- global.css contains resets, custom properties, and utility classes -->
+    <link rel="stylesheet" href="css/global.css" />
+
+    <!-- start from the top-level component and work your way down -->
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/app-header.css" />
+    <link rel="stylesheet" href="css/header-dropdown.css" />
+    <link rel="stylesheet" href="css/app-footer.css" />
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
+
+  <body>
+    <main>
+      <header class="container">
+        <section class="bookstore-logo">
+          <a href="index.html">
+            <img
+              src="images/site/BookNookLogo.png"
+              alt="BookNook Logo"
+              width="90px"
+              height="80px"
+            />
+          </a>
+        </section>
+        <section class="title">
+          <h1 class="text-logo">BookNook</h1>
+        </section>
+        <section class = "search-bar-field">
+        <form action="category.html" class ="search-button-position">
+          <input type="text" class="search-bar" placeholder="Search by Title, Author or Keywords"/>
+          <button type="submit"><i class="fa fa-search fa-4xs"></i></button>
+        </form>
+      </section>
+        <section class="header-dropdown-and-cart">
+          <button class="button cart-button">
+            <i class="fa fa-shopping-cart homecart" style="font-size:24px"></i> 
+            <p class ="cart-text">2</p>
+          </button>
+          <button class="button login-button">Login</button>
+          <div class="header-dropdown">
+            <button class="button categories-button">Categories</button>
+            <ul class="items">
+              <li><a href="category.html?category=Biography">Biography</a></li>
+              <li><a href="category.html?category=Humor">Humor</a></li>
+              <li><a href="category.html?category=Mystery">Mystery</a></li>
+              <li><a href="category.html?category=Fiction">Fiction</a></li>
+            </ul>
+          </div>
+        </section>
+      </header>
+      <div class="home-page">
+        
+        <img
+        src="images/site/home-page.png"
+        alt="BookGuru Logo"
+        width="2000px"
+        height=700px;
+      />
+      <section class="main-text">
+        <h1 style="font-size: 50px;">Welcome to BookNook!</h1><br><br>
+        <p style="font-size: 25px;">Buy your favorite books in our bookstore, Enjoy Reading!</p><br><br>
+        <p style="font-size: 25px;">EXCLUSIVELY FOR FANTASY LOVERS!!</p><br><br>
+        <button class="button purchase-button">PURCHASE BOOKS HERE!</button>
+        <br><br><br><br><br><br>
+        <p style="font-size: 18px; white-space: nowrap; font-family: 'Times New Roman', Times, serif;">The premier media marketplace connecting you to over 200 million books from thousands of independent sellers worldwide</p>
+      </section>
+      </div> 
+
+      <footer class="container">
+        <section class="links">
+          <a href="index.html" style="color:white">About</a>
+          <a href="index.html" style="color:white" class = "contact">Contact Us</a>
+          <a href="index.html" style="color:white">Directions</a>
+          <a href="index.html" style="color:white">Help</a>
+          <br> 
+          <p class ="copyrights">2015-2023 © BookNook Literary Solutions Private Limited. ALL Rights Reserved.</p>
+        </br> 
+        </section>
+        <section class="icons">
+          <a href="https://www.facebook.com/"  class="fa fa-facebook"></a>
+          <a href="https://twitter.com/" class="fa fa-twitter"></a>
+          <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+        </section>
+      </footer>
+    </main>
+  </body>
+</html>
