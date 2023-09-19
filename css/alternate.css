@@ -1,0 +1,87 @@
+.login-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    align-items: left;
+}
+
+.login-text a {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.purchase {
+    border-radius: 0;
+    background-color: white;
+    padding: 1rem;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.purchase :hover {
+    background-color: #a67c00;
+}
+
+a.welcome-back {
+    font-size: 30px;
+    text-decoration: none;
+}
+
+button.signed-in {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.signed-in i {
+    font-size: 20px;
+}
+
+.signed-in {
+    gap: 0.3rem;
+}
+
+.hero-text-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 80vh;
+}
+
+button.hero-button {
+    margin-bottom: 1.5rem;
+}
+
+.continue {
+    color: white;
+    padding-bottom: 1rem;
+    font-weight: lighter;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.continue-images img {
+    width: 10vw;
+    height: 20vh;
+}
+
+.continue-website {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.continue-images {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}

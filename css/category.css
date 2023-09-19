@@ -1,0 +1,87 @@
+.navigation-bar {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+}
+
+.rings-category {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: left;
+    gap: 2rem;
+    margin-left: 2rem;
+}
+
+.rings-category a {
+    background-color: rgb(237, 237, 237);
+    padding: 0.5rem;
+    box-shadow: 2px 2px 2px 2px var(--border-box-color);
+}
+
+.rings-category a:hover {
+    background-color: var(--button-hover-color);
+    color: var(---website-border-color);
+}
+
+.filter {
+    padding-top: 1.2rem;
+    margin-left: 2rem;
+    text-decoration: underline;
+}
+
+.filter a:hover {
+    color: #4b4c4c
+}
+
+.grid-images {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
+    gap: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.grid-images img {
+    height: 45vh;
+    width: 25vw;
+    cursor: pointer;
+}
+
+.image-containers {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: 2px 2px 2px 2px var(--border-box-color);
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-left: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.ring-type {
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 16px;
+}
+
+.rings-category a.active {
+    background-color: var(--website-title-color);
+    color: var(--header-background-color);
+}
+
+.ring-image {
+    padding: 1rem;
+}
+
+.wishlist-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
