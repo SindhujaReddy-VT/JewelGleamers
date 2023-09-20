@@ -201,3 +201,12 @@ i.fa.fa-star-o.rex {
     flex-direction: column;
     margin: 0rem 0rem 2rem 2rem;
 }
+
+.review-discussion-title {
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.review-discussion-content {
+    margin-top: 1rem;
+}
