@@ -20,7 +20,7 @@
 
 .rings-category a:hover {
     background-color: var(--button-hover-color);
-    color: var(---website-border-color);
+    color: var(--website-border-color);
 }
 
 .filter {

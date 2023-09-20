@@ -58,7 +58,6 @@ a:visited {
     background-image: url('/images/hero-image.png');
     display: flex;
     justify-content: right;
-    align-items: right;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -67,11 +66,25 @@ a:visited {
     height: 80vh;
 }
 
-a.sign-in {
-    color: white;
+button.create-account {
+    font-family: sans-serif;
+    font-size: small;
 }
 
-button.hero-button {
+a.sign-in {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    background-color: var(--button-background-color);
+    color: var(--header-background-color);
+    border: 0;
+    text-decoration: none;
+    padding: 1vh;
+    font-family: sans-serif;
+    font-size: small;
+}
+
+a.hero-button {
     text-align: center;
     font-family: brandon-grotesque, sans-serif;
     font-size: 20px;
@@ -82,6 +95,13 @@ button.hero-button {
     padding: 2vh;
     margin-top: 1rem;
     cursor: pointer;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    background-color: var(--button-background-color);
+    color: var(--header-background-color);
+    text-decoration: none;
 }
 
 form {
@@ -134,7 +154,7 @@ button {
     border-bottom: 1.5px solid var(--website-border-color);
 }
 
-/* Style the links inside the navigation bar */
+/* Style the links inside navigation bar */
 .top-navigation a {
     float: left;
     color: var(--header-background-color);
@@ -147,7 +167,7 @@ button {
 /* Change the color of links on hover */
 .top-navigation a:hover {
     background-color: var(--button-hover-color);
-    color: var(---website-border-color);
+    color: var(--website-border-color);
 }
 
 i:hover {
@@ -160,7 +180,7 @@ button:hover {
     cursor: pointer;
 }
 
-/* Add a color to the active/current link */
+/* Add a color to the active link */
 .top-navigation a.active {
     background-color: var(--website-title-color);
     color: var(--header-background-color);
@@ -192,7 +212,6 @@ button:hover {
     margin-right: 0.5rem;
 }
 
-/* Style all font awesome icons */
 .fa {
     padding: 2px;
     font-size: 30px;
@@ -200,12 +219,10 @@ button:hover {
     text-decoration: none;
 }
 
-/* Add a hover effect if you want */
 .fa:hover {
     opacity: 0.7;
 }
 
-/* Set a specific color for each brand */
 
 /* Facebook */
 .fa-facebook {

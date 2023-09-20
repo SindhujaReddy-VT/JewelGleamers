@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <title>JewelGleamers</title>
-    <meta charset="utf-8" />
-    <meta name="description" content="The homepage for JewelGleamers" />
+    <meta charset="utf-8">
+    <meta name="description" content="The homepage for JewelGleamers">
     <!--Social Media Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Linking the styling sheets-->
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="css/alternate.css" />
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/alternate.css">
 </head>
 
 <!-- All the images used in the design are taken from Amazon, Ana Luisa websites -->
@@ -18,28 +18,28 @@
 <body>
     <header class="header">
         <!-- Header of the page -->
-        <section class="header-title">
+        <div class="header-title">
             <!-- Adding the logo to the page -->
-            <img class="logo" src="images/logo.png" alt="Logo" />
+            <img class="logo" src="images/logo.png" alt="Logo">
             <h1 class="header-website">JewelGleamers</h1>
-        </section>
-        <section class="header-search-bar">
+        </div>
+        <div class="header-search-bar">
             <!-- form input text to search the store -->
             <form>
-                <input class="search-bar" type="text" placeholder="Search entire store here.." />
+                <input class="search-bar" type="text" placeholder="Search entire store here..">
                 <button class="submit">Search</button>
             </form>
-        </section>
-        <section class="header-icons">
+        </div>
+        <div class="header-icons">
             <!-- Header icons representing locations, wishlist, shopping cart and signin/login -->
             <i class="fa fa-map-marker" aria-hidden="true"></i>
             <i class="fa fa-heart" aria-hidden="true"></i>
             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             <button class="signed-in"><i class="fa fa-user" aria-hidden="true"></i>Sindhu</button>
             <!-- <button>Create an account</button> -->
-        </section>
+        </div>
     </header>
-    <section class="main-content">
+    <div class="main-content">
         <!-- Main content of the page -->
         <div class="top-navigation">
             <!-- Navigation bar to search the various types of jewelry -->
@@ -55,49 +55,55 @@
         <div class="hero-text-button">
             <div class="hero-text">
                 <div class="login-text">
-                    <!-- Welcome back user when logged in -->
-                    <a class="welcome-back">Welcome back, Sindhu! We Missed You!</a>
-                    <!-- Shows recent purchase history if user had some purchases earlier -->
-                    <a><button class="purchase">Your Recent Purchase History ></button></a>
+                    <div class="purchase-container">
+                        <!-- Welcome back user when logged in -->
+                        <div>
+                            <a class="welcome-back">Welcome back, Sindhu! We Missed You!</a>
+                        </div>
+                        <div>
+                            <!-- Shows recent purchase history if user had some purchases earlier -->
+                            <a class="purchase">Your Recent Purchase History > </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="continue-website">
                     <!-- Continue Shopping -->
                     <div class="continue">Continue Shopping</div>
                     <div class="hero-buttons">
                         <!-- Shop the collection that defaults to the Rings category page -->
-                        <a href="./category.html"><button class="hero-button">Shop the Collection</button></a>
+                        <a class="hero-button" href="./category.html">Shop the Collection</a>
                     </div>
                     <div class="continue-images">
                         <!-- Continue shopping images showing some collection from previous history -->
-                        <a href="./item.html"><img class="ring-image" src="./images/ring1.jpeg" alt="Ring 1"></img></a>
-                        <a href="./item.html"><img class="ring-image" src="./images/ring2.jpeg" alt="Ring 1"></img></a>
-                        <a href="./item.html"><img class="ring-image" src="./images/ring3.jpeg" alt="Ring 1"></img></a>
-                        <a href="./item.html"><img class="ring-image" src="./images/ring4.jpeg" alt="Ring 1"></img></a>
+                        <a href="./item.html"><img class="ring-image" src="./images/ring1.jpeg" alt="Ring 1"></a>
+                        <a href="./item.html"><img class="ring-image" src="./images/ring2.jpeg" alt="Ring 1"></a>
+                        <a href="./item.html"><img class="ring-image" src="./images/ring3.jpeg" alt="Ring 1"></a>
+                        <a href="./item.html"><img class="ring-image" src="./images/ring4.jpeg" alt="Ring 1"></a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     <footer class="footer">
         <!-- Footer of the page -->
-        <section class="footer-nav">
+        <div class="footer-nav">
             <!-- About us, Rate us and Contact us -->
             <a href="home.html">About</a>
-            <a href="home.html"">Rate Us</a>
+            <a href="home.html">Rate Us</a>
             <a href=" home.html">Contact Us</a>
-        </section>
-        <section class="copyrights">
+        </div>
+        <div class="copyrights">
             <!-- Copyrights, privacy and terms, conditions -->
             <a>© 2022 JewelGleamers Diamonds Corporation</a>
             <a href="home.html"> Privacy Policy </a>
             <a href="home.html">Terms & Conditions</a>
-        </section>
-        <section class="footer-icons">
+        </div>
+        <div class="footer-icons">
             <!-- Footer social media icons -->
             <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
             <a href="https://www.twitter.com/" class="fa fa-twitter"></a>
             <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
-        </section>
+        </div>
     </footer>
 </body>
 
