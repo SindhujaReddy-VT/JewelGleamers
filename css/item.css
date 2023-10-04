@@ -210,3 +210,31 @@ i.fa.fa-star-o.rex {
 .review-discussion-content {
     margin-top: 1rem;
 }
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked+label {
+    background-color: green;
+    color: #fff;
+
+}
+
+.add-bag.disabled {
+    background-color: grey;
+    color: white;
+    cursor: not-allowed;
+}
+
+.add-bag:not(.disabled) {
+    background-color: black;
+    cursor: pointer;
+}

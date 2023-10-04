@@ -8,6 +8,8 @@
     <!--Social Media Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Linking the styling sheets-->
+    <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src = "js/script.js"></script>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
@@ -24,8 +26,8 @@
         </div>
         <div class="header-search-bar">
             <!-- form input text to search the store -->
-            <form>
-                <input class="search-bar" type="text" placeholder="Search entire store here..">
+            <form action="search-result.html" method="GET">
+                <input class="search-bar" type="text" placeholder="Search entire store here.." name = "search-input">
                 <button class="submit">Search</button>
             </form>
         </div>

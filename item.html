@@ -7,6 +7,8 @@
     <meta name="description" content="The homepage for JewelGleamers">
     <!--Social Media Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src = "js/script.js"></script>
     <!--Linking the styling sheets-->
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/home.css">
@@ -26,8 +28,8 @@
         </div>
         <div class="header-search-bar">
             <!-- form input text to search the store -->
-            <form>
-                <input class="search-bar" type="text" placeholder="Search entire store here..">
+            <form action="search-result.html" method="GET">
+                <input class="search-bar" type="text" placeholder="Search entire store here.." name = "search-input">
                 <button class="submit">Search</button>
             </form>
         </div>
@@ -58,7 +60,7 @@
             <div class="image-preview">
                 <!-- Left side view of the images -->
                 <div class="box-preview"><img src="./images/ring1_view1.jpeg" alt="Ring 4"></div>
-                <div class="box-preview"><img src="./images/ring1_view2.jpeg" alt="Ring 4"></div>
+                <div class="box-preview"><img src="./images/ring1.jpeg" alt="Ring 4"></div>
                 <div class="box-preview"><img src="./images/ring1_view3.jpeg" alt="Ring 4"></div>
             </div>
             <div class="main-image-preview">
@@ -90,19 +92,30 @@
                     <a class="review">Size Guide</a>
                 </div>
                 <div class="ring-sizes">
-                    <!-- Different sizes of the product -->
-                    <a class="ring-size">5</a>
-                    <a class="ring-size">6</a>
-                    <a class="ring-size">7</a>
-                    <a class="ring-size">8</a>
-                    <a class="ring-size">9</a>
-                    <a class="ring-size">10</a>
+                    <input type="radio" name="ring-size" id="size5">
+                    <label for="size5">5</label>
+                    
+                    <input type="radio" name="ring-size" id="size6">
+                    <label for="size6">6</label>
+                    
+                    <input type="radio" name="ring-size" id="size7">
+                    <label for="size7">7</label>
+                    
+                    <input type="radio" name="ring-size" id="size8">
+                    <label for="size8">8</label>
+                    
+                    <input type="radio" name="ring-size" id="size9">
+                    <label for="size9">9</label>
+                    
+                    <input type="radio" name="ring-size" id="size10">
+                    <label for="size10">10</label>
                 </div>
                 <div class="add-to-bag">
                     <!-- Add to either wishlist or bag -->
                     <button class="add-bag">ADD TO BAG</button>
                     <button class="wishlist"><i class="fa fa-heart-o"></i></button>
                 </div>
+                <div id = "text-successful"></div>
                 <div class="grid-details">
                     <!-- Specifications or Reviews of the product -->
                     <a href="#details" class="review">Specifications</a>
