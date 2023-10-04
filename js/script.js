@@ -1,3 +1,5 @@
+// Event Delegation and DOM Traversal to add and modify components
+
 $(document).ready(function () {
 
     // Using Event Delegation to update/modify existing element and adding new element by changing the source

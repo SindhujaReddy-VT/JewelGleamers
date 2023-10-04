@@ -1,3 +1,5 @@
+// Search bar in the header functionality
+
 $(document).ready(function () {
 
     // Navigating to the related page by finding the results on the search bar and displaying 
