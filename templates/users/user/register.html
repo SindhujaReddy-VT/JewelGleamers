@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Page</title>
+    <link rel="stylesheet" href="{% static "css/login.css"%}">
+</head>
+<body class = "login-page">
+    <div class="login-box-template">
+        <h2 style="color: #a67c00;">JewelGleamers</h2>
+        <form class="register-page" id="login-box" action="{% url "users:register" %}" method="POST">
+        {% csrf_token %}
+        {% if form.errors %}
+            <div class="error">Registration failed. Please correct the errors below.</div>
+        {% endif %}
+        {{ form.as_div }}
+        <input type="submit" name="submit" value="Register" class="register-button">
+    </form>
+        <div class="register-block">
+            <a class="register" href="{% url 'users:login_page' %}">Login</a>
+        </div>
+    </div>
+</body>
+</html>

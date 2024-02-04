@@ -1,0 +1,49 @@
+h3 {
+    color: #a67c00;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+a.feed-link {
+    color: #3e4b37;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.feed-link:hover {
+    cursor: pointer;
+    color: #a67c00;
+    }
+
+.no-activity {
+    color: #3e4b37;
+}
+
+.feed-div
+{
+    display: flex;
+    margin-left: 1rem;
+}
+
+.feed-ul
+{
+     background: white;
+    margin-left: 1rem;
+    padding: 1rem;
+}
+
+.feed-heading
+{
+    margin: 0 !important;
+    background-color: white;
+    padding: 0.5rem;
+}

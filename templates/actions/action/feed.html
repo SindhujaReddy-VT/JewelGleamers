@@ -1,0 +1,29 @@
+{% load tz %}
+{% load static %}
+<link rel="stylesheet" href="{% static "css/feed.css" %}">
+
+<h3 class = "feed-heading">Recent Activity</h3>
+<ul class = "feed-ul">
+    {% for action in actions %}
+        <li>
+        <div class = "feed-div">
+            {% if not action.role_changed %}
+                    <a class="feed-link" href="{% url 'users:profile' action.user.username %}">
+                        {{ action.user.username }}
+                    </a>
+                    &nbsp;{{ action.verb }}
+            {% endif %}
+            {% if action.target %}
+                <a class="feed-link" href="{{ action.target.get_absolute_url }}">&nbsp;{{ action.target}}</a>
+            {% endif %}
+            {% if action.role_changed %}
+                <a class="feed-link" href="{%  url 'users:profile' action.user.username %}">{{ action.user.username }}</a>
+                &nbsp;{{ action.verb }}
+            {% endif %}
+            &nbsp;<span class="timestamp">({{ action.created|timezone:"US/Eastern"|date:"F j, Y P" }})</span>
+        </div>
+        </li>
+    {% empty %}
+        <li class="no-activity">No activity yet!</li>
+    {% endfor %}
+</ul>

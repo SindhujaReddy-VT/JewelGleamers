@@ -1,0 +1,44 @@
+{% extends "jewelGleamer/base.html" %}
+{% load static %}
+{% block page-title %}Profile Page{% endblock %}
+<title>Profile Page</title>
+{% block main-content %}
+    <div class = "single-user-profile">
+    <h2 class="user-profile"> Profile Page for {{ user.username }} </h2>
+    {% if request.session.role == "Admin" or request.session.username == user.username %}
+    <div class="profiles-page">
+        <form id="profile-form" class="profile-form" action="{% url 'users:profile' username=user.username %}" method="post">
+        {% csrf_token %}
+        <label>Username</label> {{ user.username }}
+        {% for field in form %}
+        {% if field.name != 'role' %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {{ field.errors }}
+            </div>
+        {% endif %}
+    {% endfor %}
+    {% if request.session.role == "Admin" %}
+        <p style="font-size:small;font-style: italic;padding-left: 0.6rem">*Role can be either Admin or Regular*</p>
+        <label for="{{ form.role.id_for_label }}">Role</label>
+            {{ form.role }}
+            {{ form.role.errors }}
+    {% endif %}
+        <div class="profile-save-button">
+            <button type="submit" id="save-btn">Save</button>
+        </div>
+</form>
+    </div>
+        {% else %}
+        <div class="else-profiles">
+            <p class="profile-details">Username: {{ user.username }}</p>
+            <p  class="profile-details">First Name: {{ user.first_name }}</p>
+            <p  class="profile-details">Last Name: {{ user.last_name }}</p>
+        </div>
+    {% endif %}
+       <div class="single-profile-feed">
+           {% include "actions/action/feed.html" %}
+       </div>
+    </div>
+{% endblock %}

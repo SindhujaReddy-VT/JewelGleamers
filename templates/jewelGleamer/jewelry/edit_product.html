@@ -1,0 +1,29 @@
+{% extends "jewelGleamer/base.html" %}
+{% block page-title %}Edit Product{% endblock %}
+{% block main-content %}
+
+<div class="edit-product-form">
+    <h2 class="edit-product">Edit Product</h2>
+
+    <form class="edit-product-form-inner" method="post">
+        {% csrf_token %}
+
+        <label class="add-item" for="name">Name:</label>
+        <input class="input-item" type="text" name="new_name" value="{{ product.name }}" required>
+
+        <label class="add-item" for="price">Price:</label>
+        <input class="input-item" type="number" name="new_price" value="{{ product.price }}" required>
+
+        <label class="add-item" for="details">Details:</label>
+        <textarea class="input-item" name="new_details" required>{{ product.details }}</textarea>
+
+        <label class="add-item" for="description">Description:</label>
+        <textarea class="input-item" name="new_description" required>{{ product.description }}</textarea>
+
+        <label class="add-item" for="materials">Materials:</label>
+        <textarea class="input-item"  name="new_materials" required>{{ product.materials }}</textarea>
+
+        <button class="add-submit-btn" type="submit">Save</button>
+    </form>
+</div>
+{% endblock %}

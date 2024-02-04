@@ -1,0 +1,20 @@
+{% extends "jewelGleamer/base.html" %}
+{% load static %}
+{% block page-title %}Blog Page{% endblock %}
+{% block main-content %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static "js/script.js" %}"></script><script></script>
+<div class="blog-post">
+            <div class="other-posts">
+                <!-- Other post details -->
+                <div class="other-post-text">People's Experience with JewelGleamers</div>
+                <div>
+                    <button class="other-blogs">View</button>
+                </div>
+                <div>
+                    <button class="hide-blogs" style="display: none;">Hide</button>
+                </div>
+                <div class="post-details"></div>
+            </div>
+        </div>
+{% endblock %}

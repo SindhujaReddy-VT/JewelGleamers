@@ -1,0 +1,57 @@
+{% extends "jewelGleamer/base.html" %}
+{% load static %}
+{% block page-title %}Category Page{% endblock %}
+{% block main-content %}
+    <div class="navigation-bar">
+            <!-- Category selected -->
+            <div class="head-title">
+                <h2>RINGS</h2>
+            </div>
+            <div class="paragraph">You’ve got an edge—your rings should too.</div>
+        </div>
+    <div class="add">
+    <div class=" filter">
+         {% if rings %}
+            <button class="filter-button" id="sort-by-price" onclick="sortByPrice()">SORT BY PRICE</button>
+        {% endif %}
+        </div>
+    {% if request.session.username == 'Admin' %}
+            <a class="add-product" href="{% url 'jewelGleamer:add_new_item'%}">Add New Product</a>
+    {% endif %}
+    </div>
+    {% if rings %}
+        <div id="wishlist-message" class="alert alert-success" style="display: none;"></div>
+        <div class="grid-images"  id="item-container">
+            <!-- Various images of the product, name and price of the product -->
+            {% for ring in rings %}
+               <div class="image-containers" data-price="{{ ring.price }}">
+               {% if request.session.username == 'Admin' %}
+               <div class = "delete-div">
+                   <a class="edit-details-link" href="{% url 'jewelGleamer:edit_ring' ring.id %}">Edit</a>
+                <form  class="delete-form" method="post" action="{% url 'jewelGleamer:delete_ring' ring.id %}">
+                {% csrf_token %}
+                <input type="hidden" name="ring_id" value="{{ ring.id }}">
+                <button class="delete-product" type="button" onclick="confirmDelete('{{ ring.id }}')">Delete</button>
+                </form>
+                </div>
+               {% endif %}
+               {% if ring.url %}
+                   <a href="{% url 'jewelGleamer:item_detail' ring.id %}"><img class="ring-image" src="{{ ring.url.url  }} " alt="Ring DEF"></a>
+               {% else %}
+                   <a href="{% url 'jewelGleamer:item_detail' ring.id %}"><img class="ring-image" src="{% static 'ring1.jpeg' %}" alt="Ring 1"></a>
+               {% endif %}
+                <div class="wishlist-text">
+                    <div class="text">
+                        <div class="ring-type">{{ ring.name }}</div>
+                        <div>${{ ring.price }}</div>
+                    </div>
+                </div>
+               </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="no-products">
+        There are no products right now. Click on Add New Product button to proceed further!
+        </div>
+    {% endif %}
+{% endblock %}

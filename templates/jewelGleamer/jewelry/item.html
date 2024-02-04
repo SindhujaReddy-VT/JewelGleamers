@@ -1,0 +1,193 @@
+{% extends "jewelGleamer/base.html" %}
+{% load static %}
+{% load tz %}
+{% block page-title %}Item Page{% endblock %}
+{% block main-content %}
+<div class="ring-preview">
+            <!-- Single item review of the page -->
+            <div class="image-preview">
+                {% if item.url %}
+                <!-- Left side view of the images -->
+                <div class="box-preview"><img src="{% static 'images/ring1_view1.jpeg' %}" alt="Ring 4"></div>
+                <div class="box-preview"><img src="{{ item.url.url }}" alt="Ring 4"></div>
+                <div class="box-preview"><img src="{% static 'images/ring1_view3.jpeg' %}" alt="Ring 4"></div>
+               {% endif %}
+           </div>
+            <div class="main-image-preview">
+                <!-- Main image to display on the single product page -->
+                {% if item.url %}
+                <div class="box-preview"><img src="{{ item.url.url }}" alt="Ring 4"></div>
+               {% else %}
+                 <div class="box-preview"><img src="{% static 'images/ring1.jpeg' %}" alt="Ring 4"></div>
+               {% endif %}
+            </div>
+            <div class="ring-text">
+                <!-- Name and price of the product -->
+                <div class="details-edit">
+                    <div class="ring-name">{{ item.name }}</div>
+                    {% if request.session.username == 'Admin' %}
+                        <a class="edit-details-page" href="{% url 'jewelGleamer:edit_ring' item.id %}">Edit Details</a>
+                    {% endif %}
+                </div>
+                <div class="ring-price">${{ item.price }}</div>
+                    <div class="ring-post">Posted by {{ item.author }} on
+                        {{ item.date_posted|timezone:"US/Eastern"|date:"F j, Y P" }}</div>
+                <div class="rating-review">
+                    <div>
+                        <!-- overall rating of the product -->
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="rating">
+                        <div>4.5 | </div>
+                        <!-- Redirects to the review page -->
+                        <a href="#review-section" class="review">See 42 reviews</a>
+                    </div>
+                </div>
+                <div class="rating-review">
+                    <!-- Product specifications of the page -->
+                    <div>Ring Size </div>
+                </div>
+                <div class="ring-sizes">
+                    <input type="radio" class = "radio-size" name="ring-size" id="size5">
+                    <label for="size5">5</label>
+
+                    <input type="radio" class = "radio-size" name="ring-size" id="size6">
+                    <label for="size6">6</label>
+
+                    <input type="radio"class = "radio-size" name="ring-size" id="size7">
+                    <label for="size7">7</label>
+
+                    <input type="radio" class = "radio-size" name="ring-size" id="size8">
+                    <label for="size8">8</label>
+
+                    <input type="radio" class = "radio-size" name="ring-size" id="size9">
+                    <label for="size9">9</label>
+
+                    <input type="radio" class = "radio-size" name="ring-size" id="size10">
+                    <label for="size10">10</label>
+                </div>
+                <div class="add-to-bag">
+                    <!-- Add to either wishlist or bag -->
+                    <button class="add-bag-page">ADD TO BAG</button>
+                </div>
+                <div id="text-successful"></div>
+                <div class="grid-details">
+                    <!-- Specifications or Reviews of the product -->
+                    <a href="#details" class="review">Specifications</a>
+                    <a href="#review-section" class="review">Reviews</a>
+                </div>
+            </div>
+        </div>
+    <div class="dmd" id="details">
+        <div class="reviews">DETAILS</div>
+        <!-- Details of the product -->
+        <div>{{ item.details}}</div>
+    </div>
+    <div class="dmd" id="description">
+        <!-- Description of the product -->
+        <div class="reviews">DESCRIPTION</div>
+        <div class = "description-new">{{ item.description }}</div>
+        {% if request.session.role == 'Admin' %}
+        <div class = "prompt-placeholder"> This is a Prompt that will be sent to AI, We have given a sample prompt, change it if you would like to: </div>
+        <textarea class = "prompt" style="display: block;">Provide an interesting description of the product: {{ item.description }} using details: {{ item.details }} and consider the item materials: {{item.materials}} Limit the enhanced description to 2 lines please </textarea>
+            <div class = "prompt-error"></div>
+            <div id="rate-limit-error" style="color: red; display: none;">Rate limit reached. Please try again after a short wait of 1 minute.</div>
+        <div class = "generate-placeholder" style="display: none;"> This is the Generated Response from AI. Please Save if you like it, or generate a new response</div>
+        <textarea id="description-edit" style="display: none;">{{ item.description }}</textarea>
+            <div class = "description-error"></div>
+        <div class = "description-flex-edit">
+        <div><button class="generate-description" data-itemid="{{ item.id }}">Generate Enhanced Description</button></div>
+        <div><button id="save-description" data-itemid="{{ item.id }}" style="display: none;">Save Description</button></div>
+            <div><button id="cancel-description" data-itemid="{{ item.id }}" style="display: none;">Cancel</button></div>
+        </div>
+        {% endif %}
+    </div>
+    <div class="dmd" id="materials">
+        <!-- Materials used in the product -->
+        <div class="reviews">MATERIALS</div>
+        <div>{{ item.materials }}
+        </div>
+    </div>
+    <div class="review-section" id="review-section">
+        <!-- Review section of the product -->
+        <div class="reviews">REVIEWS</div>
+        <div class="review-box">
+            <div class="review-item">
+                <div class="review-ratings">
+                    <div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="review-rating">
+                        <div>4.5 | </div>
+                        <div> 42 Reviews</div>
+                    </div>
+                </div>
+            </div>
+            {% if request.session.username %}
+            <div class="review-item">
+                <!-- Review the product -->
+                <button class="ask-question">REVIEW THIS PRODUCT</button>
+            </div>
+    {% endif %}
+        </div>
+    <form class="form-review-details" style="display: none;">
+                {% csrf_token %}
+                    <input type="hidden" name="review_id" value="{{ review.id }}">
+                    <label class="add-item" for="title">Title:</label>
+                    <input type="text" name="title" required />
+                    <label class="add-item" for="content">Content:</label>
+                    <textarea name="content" rows="5" required></textarea>
+                    <input type="hidden" name="rings_id" value= {{ item.id }} />
+        <div>
+            <button type="submit">Post Review</button>
+        </div>
+                </form>
+        <div class="review-questions">
+            <div class="review-details">
+            {% if reviews %}
+                {% for review in reviews %}
+                    <div class = "review-new-div">
+                    <div class="review-discussion">
+                    <div class="review-discussion-lister">
+                        <a href="{% url 'users:profile' review.author %}">
+                        {{ review.author }}
+                    </a></div>
+                    <div>
+                        <div class="review-discussion-stars">
+                            <i class="fa fa-star rex" aria-hidden="true"></i>
+                            <i class="fa fa-star rex" aria-hidden="true"></i>
+                            <i class="fa fa-star rex" aria-hidden="true"></i>
+                            <i class="fa fa-star rex" aria-hidden="true"></i>
+                            <i class="fa fa-star-half-o rex" aria-hidden="true"></i>
+                        </div>
+                        <div class="review-discussion-title">{{ review.title}}
+                        </div>
+                        <div class="review-discussion-content">{{ review.content }}</div>
+                        {{ review.date_posted|timezone:"US/Eastern"|date:"F j, Y P" }}
+                    </div>
+                        {% if request.session.role == 'Admin' or request.session.username == review.author.username %}
+                        <div class="review-actions">
+                        <a class="review-edit-delete" href="{% url 'jewelGleamer:edit_review' item_id=item.id review_id=review.id %}">Edit</a>
+                        <a class="review-delete-new" data-itemid="{{ item.id }}" data-reviewid ="{{ review.id }}" href="#">Delete</a>
+                         </div>
+                        {% endif %}
+                </div>
+                    </div>
+                {% endfor %}
+              {% else %}
+                <div class="no-comments">
+                    <p>No comments for this product yet!</p>
+                </div>
+    {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

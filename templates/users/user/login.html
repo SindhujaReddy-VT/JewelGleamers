@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static "css/login.css"%}">
+</head>
+<body class = "login-page">
+    <div class="login-box-template">
+        <h2 style="color: #a67c00;">JewelGleamers</h2>
+        <form method="post" action = {% url "users:login" %}>
+            {% csrf_token %}
+            {% if messages %}
+                {% for message in messages %}
+                <p style="color: red;">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+     <div class="register-block">
+        <a class="register" href="{% url 'users:register' %}">Not a User? Sign Up.</a>
+    </div>
+    </div>
+</body>
+</html>

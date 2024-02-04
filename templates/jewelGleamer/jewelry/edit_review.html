@@ -1,0 +1,12 @@
+{% extends "jewelGleamer/base.html" %}
+{% load static %}
+{% block page-title %}Edit Review{% endblock %}
+
+{% block main-content %}
+  <h3 class="edit-review">Edit Review</h3>
+  <form class="edit-review-form" method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Changes</button>
+  </form>
+{% endblock %}

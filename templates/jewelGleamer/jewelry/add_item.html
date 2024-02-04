@@ -1,0 +1,26 @@
+{% extends "jewelGleamer/base.html" %}
+{% load static %}
+{% block page-title %}Category Page{% endblock %}
+{% block main-content %}
+{% if request.session.username == 'Admin' %}
+    <h2 class="edit-product">Add Product</h2>
+    <div id="form-add" class="form-add">
+            <form method="post" class = "form-add-inner" action="{% url 'jewelGleamer:add_item' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label class="add-item" for="item_name">Product Name:</label>
+                <input class="input-item" type="text" name="item_name" required>
+                <label class="add-item" for="item_price">Price:</label>
+                <input class="input-item"  type="text" name="item_price" required>
+                <label class="add-item" for="item_url">Image:</label>
+                <input class="add-item" type="file" name="item_url">
+                <label class="add-item" for="item_url">Details:</label>
+                <input class="input-item" type="text" name="item_details" required >
+                <label class="add-item" for="item_url">Description:</label>
+                <input class="input-item" type="text" name="item_description" >
+                <label class="add-item" for="item_url">Materials:</label>
+                <input class="input-item" type="text" name="item_materials" required >
+                <button type="submit" class = "add-submit-btn">Submit</button>
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}

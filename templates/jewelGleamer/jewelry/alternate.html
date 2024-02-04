@@ -1,0 +1,20 @@
+{% extends "jewelGleamer/base.html" %}
+{% load static %}
+{% block page-title %}Home Page{% endblock %}
+{% block main-content %}
+<div class="hero-text-button-a">
+            <div class="hero-text-alternate">
+                <div class="login-text">
+                    <div class="purchase-container">
+                        {% include "actions/action/feed.html" %}
+                    </div>
+                </div>
+                <div class="continue-website">
+                    <div class="hero-buttons">
+                        <!-- Shop the collection that defaults to the Rings category page -->
+                        <a class="hero-button" href="{% url 'jewelGleamer:items_list' %}">Shop the Collection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

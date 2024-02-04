@@ -1,0 +1,16 @@
+{% extends "jewelGleamer/base.html" %}
+{% load static %}
+{% block page-title %}Users Profiles{% endblock %}
+<title>User Profiles</title>
+{% block main-content %}
+    <div>
+        <h2 class="user-profiles">User Profiles</h2>
+        <div class="profile-list">
+            {% for user_name in user_names %}
+                <a href="{% url "users:profile" user_name %}" class="username-profile">
+                    {{ user_name }}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

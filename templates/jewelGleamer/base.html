@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<!-- Base template to re-use for all the other html pages -->
+<head>
+    <title>JewelGleamers  | {% block page-title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="description" content="The homepage for JewelGleamers">
+    <!--Social Media Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Linking the styling sheets-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static "js/sort.js" %}"></script>
+    <script src="{% static "js/script.js" %}"></script>
+    <link rel="stylesheet" href="{% static "css/global.css" %}">
+    <link rel="stylesheet" href="{% static "css/review.css" %}">
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+    <link rel="stylesheet" href="{% static "css/profile.css"%}">
+    <link rel="stylesheet" href="{% static "css/alternate.css" %}">
+    <link rel="stylesheet" href="{% static "css/blog.css" %}">
+    <link rel="stylesheet" href="{% static "css/item.css" %}">
+    <link rel="stylesheet" href="{% static "css/category.css" %}">
+    <link rel="stylesheet" href="{% static "css/search.css" %}">
+</head>
+
+<!-- All the images used in the design are taken from Amazon, Ana Luisa websites -->
+
+<body>
+    <header class="header">
+        <!-- Header of the page -->
+        <div class="header-title">
+            <!-- Adding the logo to the page -->
+            <img class="logo" src="{% static "images/logo.png" %}" alt="Logo">
+            <h1 class="header-website">JewelGleamers</h1>
+        </div>
+        <div class="header-search-bar">
+            <!-- form input text to search the store -->
+            <form action="{% url 'jewelGleamer:search' %}" method="get" class = "search-form">
+    <input class="search-bar" type="text" placeholder="Search entire store here.." name="search-input" id="search-input">
+    <button class="submit">Search</button>
+</form>
+        </div>
+        <div class="header-icons">
+            <!-- Header icons representing locations, wishlist, shopping cart and signin/login -->
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <a class="sign-in" href="{% url "users:user_profiles" %}">User Profiles</a>
+            {% if request.session.username %}
+             <a href="{% url 'users:profile' request.session.username %}" class="sign-in">
+                 {{request.session.username }}
+             </a>
+                <a class="sign-in" href="{% url 'users:logout'%}">Logout</a>
+            {% else %}
+                <a class="sign-in" href="{% url 'users:register'%}">Sign in / Sign up</a>
+            {% endif %}
+        </div>
+    </header>
+    <div class="main-content">
+        <!-- Main content of the page -->
+        <div class="top-navigation">
+            <!-- Navigation bar to search the various types of jewelry -->
+            {% if request.session.username %}
+            <a href="{% url 'jewelGleamer:logged_user_home' %}">Home</a>
+            {% else %}
+            <a href="{% url 'jewelGleamer:home' %}">Home</a>
+            {% endif %}
+            <a href="{% url 'jewelGleamer:items_list' %}">Rings</a>
+            <a href="{% url 'jewelGleamer:blog' %}">Blogs</a>
+        </div>
+      {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+        {% block main-content %}{% endblock %}
+    </div>
+    <footer class="footer">
+        <!-- Footer of the page -->
+        <div class="footer-nav">
+            <!-- About us, Rate us and Contact us -->
+            <a href="{% url 'jewelGleamer:home' %}">About</a>
+            <a href="{% url 'jewelGleamer:home' %}">Rate Us</a>
+            <a href="{% url 'jewelGleamer:home' %}">Contact Us</a>
+        </div>
+        <div class="copyrights">
+            <!-- Copyrights, privacy and terms, conditions -->
+            <a>© 2022 JewelGleamers Diamonds Corporation</a>
+            <a href="{% url 'jewelGleamer:home' %}"> Privacy Policy </a>
+            <a href="{% url 'jewelGleamer:home' %}">Terms & Conditions</a>
+        </div>
+        <div class="footer-icons">
+            <!-- Footer social media icons -->
+            <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+            <a href="https://www.twitter.com/" class="fa fa-twitter"></a>
+            <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+        </div>
+    </footer>
+</body>
+
+</html>

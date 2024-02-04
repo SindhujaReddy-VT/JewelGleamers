@@ -1,0 +1,258 @@
+body {
+    margin: 0px;
+    overflow: scroll;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--header-background-color);
+    height: 15vh;
+    box-shadow: 2px 2px 2px 2px var(--border-box-color);
+}
+
+.header-title {
+    display: flex;
+    gap: 0.3rem;
+    margin-left: 0.5rem;
+    align-items: center;
+}
+
+.header-website {
+    color: var(--website-title-color);
+    margin: 0;
+    font-size: 28px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.logo {
+    height: 6vh;
+}
+
+.title-text {
+    margin-right: 0.5rem;
+    padding-top: 25vh;
+    color: var(--header-background-color);
+    font-family: sans-serif;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-text-button {
+    background-image: url('../images/hero_image.png');
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 80vh;
+}
+
+button.create-account {
+    font-family: sans-serif;
+    font-size: small;
+}
+
+a.sign-in {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    background-color: var(--button-background-color);
+    color: var(--header-background-color);
+    border: 0;
+    text-decoration: none;
+    padding: 1vh;
+    font-family: sans-serif;
+    font-size: small;
+}
+
+a.hero-button {
+    text-align: center;
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 4px solid var(--header-background-color);
+    padding: 2vh;
+    margin-top: 1rem;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    background-color: var(--button-background-color);
+    color: var(--header-background-color);
+    text-decoration: none;
+}
+
+form {
+    border-radius: 20px;
+    width: 30vw;
+    border: 1px solid var(--website-border-color);
+    padding: 1vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 1px 1px 1px 1px var(--border-box-color);
+    text-decoration: none;
+}
+
+.header-search-bar {
+    display: flex;
+}
+
+.search-bar {
+    border: none;
+    margin: 3px;
+    width: 30vw;
+    outline: none;
+}
+
+.header-icons {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+button {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    background-color: var(--button-background-color);
+    color: var(--header-background-color);
+    border: 0;
+    text-decoration: none;
+    padding: 1vh;
+}
+
+/* Add a black background color to the top navigation */
+.top-navigation {
+    background-color: var(--button-background-color);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-top: 0.5px solid var(--website-border-color);
+    border-bottom: 1.5px solid var(--website-border-color);
+}
+
+/* Style the links inside navigation bar */
+.top-navigation a {
+    float: left;
+    color: var(--header-background-color);
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.top-navigation a:hover {
+    background-color: var(--button-hover-color);
+    color: var(--website-border-color);
+}
+
+i:hover {
+    color: var(--website-title-color);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--website-title-color);
+    cursor: pointer;
+}
+
+/* Add a color to the active link */
+.top-navigation a.active {
+    background-color: var(--website-title-color);
+    color: var(--header-background-color);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--footer-background-color);
+    height: 12vh;
+    box-shadow: 2px 2px 2px 2px var(--border-box-color);
+}
+
+#added-to-wishlist {
+    color: red;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 1rem;
+    margin-left: 0.5rem;
+}
+
+.copyrights {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.fa {
+    padding: 2px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+ul.messages {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 1rem;
+}
+
+ul.messages li.success{
+    background-color: green;
+    padding: 1rem;
+    margin:0.25rem;
+    list-style-type: none
+}
+
+ul.messages li.warning{
+    background-color: red;
+    padding: 1rem;
+    margin:0.25rem;
+    list-style-type: none;
+    color: white;
+}
+
+ul.messages li.info{
+    background-color: blue;
+    padding: 1rem;
+    margin:0.25rem;
+    list-style-type: none;
+    color: white;
+}

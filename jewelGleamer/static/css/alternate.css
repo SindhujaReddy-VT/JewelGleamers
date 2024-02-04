@@ -1,0 +1,106 @@
+.login-text a {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.purchase-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    padding-bottom: 3rem;
+}
+
+a.purchase {
+    background-color: white;
+    padding: 1rem;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+.purchase :hover {
+    background-color: #a67c00;
+}
+
+a.welcome-back {
+    font-size: 30px;
+    text-decoration: none;
+}
+
+button.signed-in {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.signed-in i {
+    font-size: 20px;
+}
+
+.signed-in {
+    gap: 0.3rem;
+}
+
+.hero-text-alternate {
+    display: flex;
+    margin-top: 0.5rem;
+    gap: 2rem;
+}
+.hero-text-button-a {
+    display: flex;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 80vh;
+    background-image: url('../images/hero_image.png');
+}
+
+a.hero-button {
+    text-align: center;
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 4px solid var(--header-background-color);
+    padding: 2vh;
+    margin-top: 1rem;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    background-color: var(--button-background-color);
+    color: var(--header-background-color);
+    text-decoration: none;
+}
+
+.continue {
+    color: white;
+    padding-bottom: 1rem;
+    font-weight: lighter;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.continue-images img {
+    width: 10vw;
+    height: 20vh;
+}
+
+.continue-website {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.continue-images {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
